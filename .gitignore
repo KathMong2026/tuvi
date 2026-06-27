@@ -1,0 +1,6 @@
+old_version/
+tham khao/
+node_modules/
+package.json
+package-lock.json
+.git/
