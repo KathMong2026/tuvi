@@ -1,0 +1,42 @@
+/**
+ * Huyền Cơ Đường — Firestore Security Rules
+ * ===========================================
+ * Copy-paste vào Firebase Console → Firestore → Rules.
+ *
+ * Nguyên tắc:
+ * - Ai cũng đọc được profiles và charts (để xem lá số công khai sau này)
+ * - Chỉ user đã login mới tạo/update được profile của chính mình
+ * - Chỉ user đã login mới tạo chart (uid được set tự động bởi code)
+ * - Chỉ owner mới xóa/sửa được chart của mình
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Profiles: user chỉ đọc/ghi profile của chính mình
+    match /profiles/{userId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false; // Không ai được xóa profile
+    }
+
+    // Charts: user đọc tất cả, chỉ ghi chart của mình
+    match /charts/{chartId} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.birthYear is number
+        && request.resource.data.birthMonth is number;
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid;
+      allow delete: if request.auth != null
+        && resource.data.uid == request.auth.uid;
+    }
+
+    // Không cho phép truy cập collection khác
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
