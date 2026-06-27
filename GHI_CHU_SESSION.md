@@ -32,4 +32,34 @@ git clone https://github.com/KathMong2026/tuvi /tmp/tuvi-fresh
 ```
 cp login.html /tmp/tuvi-fresh/
 cp profile.html /tmp/tuvi-fresh/
-cp js/firebase.js /tmp/tuvi-fr
+cp js/firebase.js /tmp/tuvi-fresh/js/
+cp js/member.js /tmp/tuvi-fresh/js/
+cp js/i18n.js /tmp/tuvi-fresh/js/
+cp firestore.rules /tmp/tuvi-fresh/
+cp GHI_CHU_SESSION.md /tmp/tuvi-fresh/
+```
+
+3. KHÔNG chạm vào 7 trang cũ (bat-tu, index, hop-hon, hoang-lich, 64-que, kinh-vi-the, them) — giữ nguyên từ GitHub.
+
+4. **Cách an toàn nhất để thêm auth vào 7 trang cũ:**
+   - Mỗi trang chỉ cần thêm ĐÚNG 5 dòng vào cuối `<head>` (trước `</head>`):
+     ```html
+     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+     <script src="js/firebase.js"></script>
+     <script src="js/member.js"></script>
+     ```
+   - Và thêm ĐÚNG 1 khối vào cuối `<body>` (trước `</body>`):
+     ```html
+     <script>
+     document.addEventListener('DOMContentLoaded', function() {
+       if (typeof HCD !== 'undefined' && HCD.member) {
+         HCD.member.renderNavAuth('.kd-nav');
+       }
+     });
+     </script>
+     ```
+   - KHÔNG sửa bất kỳ dòng nào khác trong file.
+
+5. Push lên và test.

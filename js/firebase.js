@@ -213,4 +213,5 @@
     var safe = {};
     if (data.displayName !== undefined) safe.displayName = (typeof data.displayName === 'string' ? data.displayName : '').substring(0, 80);
     if (data.email !== undefined) safe.email = (typeof data.email === 'string' ? data.email : '').substring(0, 254);
-    if (data.birthYear !== undefined) safe.birthYear = data.birthYear ? Math.max(1900, Math.min(2100, parseInt(data.birthYear) || null)) : nul
+    if (data.birthYear !== undefined) safe.birthYear = data.birthYear ? Math.max(1900, Math.min(2100, parseInt(data.birthYear) || null)) : null;
+    if (data.birthMonth !== undefined) s
