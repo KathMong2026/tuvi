@@ -180,7 +180,8 @@ input,select{font-family:inherit}
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script src="js/firebase.js"></script>
-<script src="js/member.js">
+<script src="js/member.js"></script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof HCD !== 'undefined' && HCD.member) {
     HCD.member.renderNavAuth('.kd-nav');
@@ -506,6 +507,4 @@ function render(){
   html+='</div></div></div>';
   html+='</div>';
 
-  document.getElementById('app').innerHTML=ht
-</body>
-</html>
+  document.getElementById('app').innerHTML=
