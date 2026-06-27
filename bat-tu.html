@@ -709,6 +709,23 @@ input,select{font-family:inherit}
   global.HuyenCo = HC;
 })(this);
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof I18N !== 'undefined') {
+    I18N.apply();
+    var lang = I18N.getLang();
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      var isActive = b.getAttribute('data-lang') === lang;
+      b.style.background = isActive ? 'var(--seal)' : 'transparent';
+      b.style.color = isActive ? 'var(--surface)' : 'var(--ink-3)';
+    });
+  }
+  if (typeof HCD !== 'undefined' && HCD.member) {
+    HCD.member.renderNavAuth('.kd-nav');
+    HCD.member.autoFill('#fy','#fm','#fd','#fh','#fg','#ftz');
+  }
+});
+
 </script>
 <script>
 // ==============================
@@ -1135,4 +1152,6 @@ var DB=[];
   // Nayin
   HC.NAYIN_TABLE.forEach(function(n,i){
     var s=i%10,b=Math.floor(i/6)%12;
-    DB.push({cat:'Nạp Âm',key
+    DB.push({cat:'Nạp Âm',key:n,val:HC.HS_CN[s]+HC.EB_CN[b]+' '+HC.HS[s]+' '+HC.EB[b]+' — '+n+' ('+HC.WX_CN[s]+HC.WX[s]+')'});
+  });
+})();

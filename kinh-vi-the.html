@@ -164,7 +164,13 @@ a.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(33,29,24,.14
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script src="js/firebase.js"></script>
-<script src="js/member.js"></script>
+<script src="js/member.js">
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof HCD !== 'undefined' && HCD.member) {
+    HCD.member.renderNavAuth('.kd-nav');
+  }
+});
+</script>
 </head>
 <body>
 <header class="kd-header">
