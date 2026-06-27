@@ -507,7 +507,25 @@ function render(){
   html+='</div></div></div>';
   html+='</div>';
 
-  document.getElementById('app').innerHTML=
+  document.getElementById("app").innerHTML=html;
+}
+
+function changeDate(delta) {
+  displayDate.setDate(displayDate.getDate() + delta);
+  render();
+}
+function goToday() {
+  displayDate = new Date();
+  render();
+}
+function jumpDate(val) {
+  if (!val) return;
+  var parts = val.split('-');
+  displayDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+  render();
+}
+
+render();
 </script>
 </body>
 </html>
