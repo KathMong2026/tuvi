@@ -25,12 +25,13 @@
   //  THAY THẾ BẰNG CONFIG THẬT TỪ FIREBASE CONSOLE
   // ═══════════════════════════════════════════════════════════
   var FIREBASE_CONFIG = {
-    apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project.appspot.com",
-    messagingSenderId: "000000000000",
-    appId: "1:000000000000:web:xxxxxxxxxxxxxxxxxxxx"
+    apiKey: "AIzaSyBfPKL9A5yzmtFuQyHU392RyXBt_I-q5AU",
+    authDomain: "tu-vi-d211c.firebaseapp.com",
+    projectId: "tu-vi-d211c",
+    storageBucket: "tu-vi-d211c.firebasestorage.app",
+    messagingSenderId: "152056276949",
+    appId: "1:152056276949:web:8e314ff4ba38aafcb2ff5c",
+    measurementId: "G-P823DXDBFR"
   };
   // ═══════════════════════════════════════════════════════════
 
@@ -212,5 +213,4 @@
     var safe = {};
     if (data.displayName !== undefined) safe.displayName = (typeof data.displayName === 'string' ? data.displayName : '').substring(0, 80);
     if (data.email !== undefined) safe.email = (typeof data.email === 'string' ? data.email : '').substring(0, 254);
-    if (data.birthYear !== undefined) safe.birthYear = data.birthYear ? Math.max(1900, Math.min(2100, parseInt(data.birthYear) || null)) : null;
-    if (data.birthMonth !== undefined) s
+    if (data.birthYear !== undefined) safe.birthYear = data.birthYear ? Math.max(1900, Math.min(2100, parseInt(data.birthYear) || null)) : nul
