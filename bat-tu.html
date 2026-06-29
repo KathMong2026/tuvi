@@ -181,7 +181,7 @@ input,select{font-family:inherit}
 @media(max-width:680px){.pillars-detail{grid-template-columns:repeat(2,1fr)}.dayun-strip{grid-template-columns:repeat(5,1fr)}}
 
 /* Phân tích mệnh bàn */
-.verdict-section{display:none;margin-top:30px;width:100%;max-width:800px}
+.verdict-section{display:none;margin:30px auto 0;width:100%;max-width:800px;padding:0 clamp(14px,3.5vw,40px)}
 .verdict-section.show{display:block}
 .ftn2-peek-card,.dv-wizard-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px 26px;box-shadow:0 4px 20px rgba(33,29,24,.08)}
 .ftn2-peek-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -238,7 +238,7 @@ input,select{font-family:inherit}
   <nav class="kd-nav">
     <a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a>
     <a href="bat-tu.html" class="active" data-i18n="nav.bazi">Bát Tự · Tử Vi</a>
-    <a href="hop-hon.html" data-i18n="nav.hehun">Hợp Hôn</a>
+    <a href="hop-hon.html" data-i18n="nav.hehun">Hôn Nhân</a>
     <a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a>
     <a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a>
     <a href="them.html" data-i18n="nav.more">Thêm</a>
@@ -250,14 +250,14 @@ input,select{font-family:inherit}
 </header>
 
 <main class="wrap">
-<h2 class="dual-title">— 子平八字 · 紫微斗數 · 雙盤合參 —</h2>
-<p class="dual-sub">Tứ Trụ Bát Tự · Tử Vi Đẩu Số 100+ Sao · Song bàn hợp tham chính xác</p>
+<h2 class="dual-title">— Bát Tự · Tử Vi Đẩu Số · Song Bàn Hợp Tham —</h2>
+<p class="dual-sub">子平八字 · 紫微斗數 · 雙盤合參 100+ Sao</p>
 
 <div class="two-col">
   <div class="chart-col">
     <div class="chart-tabs" id="ct">
-      <button data-tab="batu" class="on"><span class="tc">八字</span> Bát tự</button>
-      <button data-tab="tuvi"><span class="tc">紫微</span> Tử Vi</button>
+      <button data-tab="batu" class="on">Bát tự <span class="tc">八字</span></button>
+      <button data-tab="tuvi">Tử Vi <span class="tc">紫微</span></button>
       <button data-tab="tra"><span class="tc">搜</span> Tra cứu</button>
     </div>
     <section id="pane-batu"><div id="batuOut"><p class="muted" style="text-align:center;padding:40px" data-i18n="batu.ziwei.empty">Nhập thông tin sinh và nhấn "Lập Mệnh Bàn" để xem kết quả.</p></div></section>
@@ -275,15 +275,15 @@ input,select{font-family:inherit}
       <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
       <div class="ff-title">八字算命 · 紫微斗數命盤</div>
       <div class="ff-sub">Lập lá số Bát Tự · Tử Vi Đẩu Số</div>
-      <div class="ff-ticks"><span>子平八字 · 100+ sao</span><span>紫微斗數 Tử Vi</span><span>Thuật toán chính xác</span></div>
+      <div class="ff-ticks"><span>100+ sao · 子平八字</span><span>Tử Vi · 紫微斗數</span><span>Thuật toán chính xác</span></div>
       <div class="ff-row2">
-        <div class="ff-field"><label>性別 <span class="vn">Giới tính</span></label><div class="ff-gender" id="fg"><button data-g="nam" class="on">男 Nam</button><button data-g="nu">女 Nữ</button></div></div>
-        <div class="ff-field"><label>姓氏 <span class="vn">Họ tên</span></label><input id="fn" class="ff-input" placeholder="Không bắt buộc"></div>
+        <div class="ff-field"><label>Giới tính <span class="vn">性別</span></label><div class="ff-gender" id="fg"><button data-g="nam" class="on">男 Nam</button><button data-g="nu">女 Nữ</button></div></div>
+        <div class="ff-field"><label>Họ tên <span class="vn">姓氏</span></label><input id="fn" class="ff-input" placeholder="Không bắt buộc"></div>
       </div>
-      <div class="ff-field" style="margin-bottom:16px"><label>陽曆 <span class="vn">Ngày sinh dương lịch</span></label><div class="ff-dates" id="fdates"><select id="fy" class="ff-select"></select><select id="fm" class="ff-select"></select><select id="fd" class="ff-select"></select></div></div>
+      <div class="ff-field" style="margin-bottom:16px"><label>Ngày sinh <span class="vn">陽曆</span></label><div class="ff-dates" id="fdates"><select id="fy" class="ff-select"></select><select id="fm" class="ff-select"></select><select id="fd" class="ff-select"></select></div></div>
       <div class="ff-row2">
-        <div class="ff-field"><label>時辰 <span class="vn">Giờ sinh</span></label><select id="fh" class="ff-select"><option value="0">Tý 0–1h 子</option><option value="1">Sửu 1–3h 丑</option><option value="2">Dần 3–5h 寅</option><option value="3">Mão 5–7h 卯</option><option value="4" selected>Thìn 7–9h 辰</option><option value="5">Tỵ 9–11h 巳</option><option value="6">Ngọ 11–13h 午</option><option value="7">Mùi 13–15h 未</option><option value="8">Thân 15–17h 申</option><option value="9">Dậu 17–19h 酉</option><option value="10">Tuất 19–21h 戌</option><option value="11">Hợi 21–23h 亥</option></select></div>
-        <div class="ff-field"><label>出生地 <span class="vn">Kinh độ</span></label>
+        <div class="ff-field"><label>Giờ sinh <span class="vn">時辰</span></label><select id="fh" class="ff-select"><option value="0">Tý 0–1h 子</option><option value="1">Sửu 1–3h 丑</option><option value="2">Dần 3–5h 寅</option><option value="3">Mão 5–7h 卯</option><option value="4" selected>Thìn 7–9h 辰</option><option value="5">Tỵ 9–11h 巳</option><option value="6">Ngọ 11–13h 午</option><option value="7">Mùi 13–15h 未</option><option value="8">Thân 15–17h 申</option><option value="9">Dậu 17–19h 酉</option><option value="10">Tuất 19–21h 戌</option><option value="11">Hợi 21–23h 亥</option></select></div>
+        <div class="ff-field"><label>Kinh độ <span class="vn">出生地</span></label>
           <select id="ftz" class="ff-select" onchange="onLocationChange(this.value)">
             <option value="105.85" data-name="Hà Nội">Hà Nội (105.85°E)</option>
             <option value="106.63" selected data-name="TP HCM">TP HCM (106.63°E)</option>
@@ -428,7 +428,7 @@ input,select{font-family:inherit}
 <footer class="kd-footer">
   <div class="row">
     <div class="fbrand"><div class="fseal">易</div><div class="ftext">Huyền Cơ Đường · 易經 — Trí tuệ biến dịch phương Đông.</div></div>
-    <div class="flinks"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html">Bát Tự</a><a href="hop-hon.html" data-i18n="nav.hehun">Hợp Hôn</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a></div>
+    <div class="flinks"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html">Bát Tự</a><a href="hop-hon.html" data-i18n="nav.hehun">Hôn Nhân</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a></div>
   </div>
   <div class="fhan">占 卜 · 易 經 · 八 卦 · 五 行 · 六 十 四 卦</div>
 </footer>
@@ -602,7 +602,7 @@ input,select{font-family:inherit}
   var HS_CN = HC.HS_CN || ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
 
   // Cung names in Vietnamese
-  var CUNG_NAMES = ['Mệnh','Phụ Mẫu','Phúc Đức','Điền Trạch','Quan Lộc','Nô Bộc','Thiên Di','Tật Ách','Tài Bạch','Tử Tức','Phu Thê','Huynh Đệ'];
+  var CUNG_NAMES = ['Mệnh','Cha Mẹ','Phúc Đức','Nhà Cửa','Sự Nghiệp','Bạn Bè','Ra Ngoài','Sức Khỏe','Tiền Bạc','Con Cái','Vợ Chồng','Anh Em'];
   var CUNG_CN = ['命宮','父母','福德','田宅','官祿','僕役','遷移','疾厄','財帛','子女','夫妻','兄弟'];
 
   // CUC_NAMES mapping
@@ -1013,7 +1013,7 @@ function renderBatu(r){
   var maxC=Math.max(wc.Mộc,wc.Hỏa,wc.Thổ,wc.Kim,wc.Thủy);
   ['Mộc','Hỏa','Thổ','Kim','Thủy'].forEach(function(wx){
     var cn={Mộc:'木',Hỏa:'火',Thổ:'土',Kim:'金',Thủy:'水'};
-    wxh+='<div class="wx-item"><div class="bar"><i style="width:'+((wc[wx]||0)/maxC*100)+'%;background:'+HC.WX_COLORS[wx]+'"></i></div><span class="lab" style="color:'+HC.WX_COLORS[wx]+'">'+cn[wx]+'</span><span class="num">'+(wc[wx]||0)+'</span></div>';
+    wxh+='<div class="wx-item"><div class="bar"><i style="width:'+((wc[wx]||0)/8*100)+'%;background:'+HC.WX_COLORS[wx]+'"></i></div><span class="lab" style="color:'+HC.WX_COLORS[wx]+'">'+cn[wx]+'</span><span class="num">'+Math.round((wc[wx]||0)/8*100)+'</span></div>';
   });
 
   var de=r.dayMaster.element;
@@ -1022,7 +1022,7 @@ function renderBatu(r){
 
   out+='<div class="ov-panel">';
   out+='<div class="ov-card dark"><div class="ov-label">'+i18n('batu.dm.badge','Nhật Chủ')+'</div><div class="ov-val"><span class="tc">'+HC.HS_CN[dm.stem]+'</span> '+HC.HS[dm.stem]+'</div><div class="ov-sub">'+HC.WX_CN[dm.stem]+' '+de+'</div></div>';
-  out+='<div class="ov-card"><div class="ov-label">'+i18n('batu.overview.strength','Thân cường nhược')+'</div><div class="ov-val">'+r.dayMaster.strength+'</div><div class="ov-sub">'+(wc[de]||0)+' hành '+de+' trong tứ trụ</div></div>';
+  out+='<div class="ov-card"><div class="ov-label">'+i18n('batu.overview.strength','Thân cường nhược')+'</div><div class="ov-val">'+r.dayMaster.strength+'</div><div class="ov-sub">'+Math.round((wc[de]||0)/8*100)+' điểm '+de+'</div></div>';
   out+='<div class="ov-card"><div class="ov-label">'+i18n('batu.overview.yong','Dụng Thần · Hỷ Kỵ')+'</div><div class="ov-val">'+r.yongShen+'</div><div class="ov-sub">Kỵ: '+r.kyThan+' · Hỷ: '+HC.WX_GEN[r.yongShen]+'</div></div>';
   out+='</div>';
 
@@ -1306,7 +1306,7 @@ var DB=[];
   // Trang Sinh
   ['Trường Sinh','Mộc Dục','Quan Đới','Lâm Quan','Đế Vượng','Suy','Bệnh','Tử','Mộ','Tuyệt','Thai','Dưỡng'].forEach(function(ts){DB.push({cat:'Vòng Tràng Sinh',key:ts,val:ts+' — một trong 12 giai đoạn vòng Tràng Sinh'})});
   // Cung
-  var CUNG_NAMES_REF = ['Mệnh','Phụ Mẫu','Phúc Đức','Điền Trạch','Quan Lộc','Nô Bộc','Thiên Di','Tật Ách','Tài Bạch','Tử Tức','Phu Thê','Huynh Đệ'];
+  var CUNG_NAMES_REF = ['Mệnh','Cha Mẹ','Phúc Đức','Nhà Cửa','Sự Nghiệp','Bạn Bè','Ra Ngoài','Sức Khỏe','Tiền Bạc','Con Cái','Vợ Chồng','Anh Em'];
   var CUNG_CN_REF = ['命宮','父母','福德','田宅','官祿','僕役','遷移','疾厄','財帛','子女','夫妻','兄弟'];
   CUNG_NAMES_REF.forEach(function(cn,i){DB.push({cat:'12 Cung',key:cn,val:CUNG_CN_REF[i]+' ('+cn+') — '+['Bản ngã, tính cách','Cha mẹ, trưởng bối','Phúc phận, tinh thần','Nhà cửa, bất động sản','Công danh, sự nghiệp','Bạn bè, cấp dưới','Di chuyển, bên ngoài','Sức khỏe, bệnh tật','Tiền bạc, tài chính','Con cái, hưởng thụ','Hôn nhân, phối ngẫu','Anh em, đồng nghiệp'][i]})});
   // Cuc
@@ -1357,11 +1357,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof HCD !== 'undefined' && HCD.member) {
     HCD.member.renderNavAuth('.kd-nav');
     HCD.member.autoFill('#fy','#fm','#fd','#fh','#fg','#ftz');
-  }
-});
-</script>
+ 
 
+</script>
 </body>
 </html>
-
- 
