@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kinh Vĩ Thế — Nguyên Hội Vận Thế | Huyền Cơ Đường</title>
-<meta name="description" content="Hoàng Cực Kinh Thế.">
+<title>Giải Nghĩa — Bát Tự · Tử Vi Cơ Bản | Huyền Cơ Đường</title>
+<meta name="description" content="Tra cứu khái niệm Bát Tự, Tử Vi cơ bản: Ngũ Hành, Thiên Can, Địa Chi, Thập Thần, 12 Cung, Chính Tinh. Dành cho người mới học mệnh lý.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;500;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
@@ -179,29 +179,175 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="kd-seal">易</div>
     <div><div class="name">Huyền Cơ Đường</div><div class="sub">Dịch Kinh 易 經 · Mệnh Lý</div></div>
   </a>
-  <nav class="kd-nav"><a href="index.html" class="">Gieo Quẻ</a><a href="bat-tu.html" class="">Bát Tự · Tử Vi</a><a href="hop-hon.html" class="">Hợp Hôn</a><a href="hoang-lich.html" class="">Hoàng Lịch</a><a href="64-que.html" class="">64 Quẻ</a><a href="them.html" class="active">Thêm</a></nav>
+  <nav class="kd-nav"><a href="index.html" class="">Gieo Quẻ</a><a href="bat-tu.html" class="">Bát Tự · Tử Vi</a><a href="hop-hon.html" class="">Hôn Nhân</a><a href="hoang-lich.html" class="">Hoàng Lịch</a><a href="kinh-vi-the.html" class="active">Giải Nghĩa</a><a href="64-que.html" class="">64 Quẻ</a><a href="them.html">Thêm</a></nav>
   <div class="kd-lang" style="display:flex;gap:2px;border:1px solid rgba(33,29,24,.22);border-radius:3px;overflow:hidden">
     <button class="lang-btn active" data-lang="vi" style="padding:5px 10px;font-size:12px;font-family:'Noto Serif';font-weight:600;background:var(--seal);color:var(--surface);border:none;cursor:pointer" onclick="switchLang('vi')">VI</button>
     <button class="lang-btn" data-lang="zh" style="padding:5px 10px;font-size:12px;font-family:'Noto Serif';font-weight:600;background:transparent;color:var(--ink-3);border:none;cursor:pointer" onclick="switchLang('zh')">中文</button>
   </div>
 </header>
 <div class="wrap">
-<div class="section-title center"><span class="zh">皇極經世</span><span class="vi">Hoàng Cực Kinh Thế</span></div>
-<p class="center muted">Thiệu Ung tiên sinh sáng lập. Dĩ Dịch lý thôi diễn thiên địa đại chu kỳ — Nguyên, Hội, Vận, Thế.</p>
-<div class="panel" style="max-width:700px;margin:20px auto">
-  <div class="panel-title">Đương Tiền Nguyên Hội Vận Thế <span class="tc" style="font-size:.7em">當前元會運世</span></div>
-  <div style="line-height:2;color:var(--ink-2);font-size:15px" id="hjjsData"></div>
+<div class="section-title center"><span class="vi" style="font-size:1.6rem;color:var(--seal);font-weight:700">Giải Nghĩa</span><span class="zh" style="font-size:.9rem;color:var(--ink-4)">Bát Tự · Tử Vi Cơ Bản</span></div>
+<p class="center muted">Những khái niệm nền tảng để đọc hiểu kết quả Bát Tự và Tử Vi — dành cho người mới bắt đầu.</p>
+<style>
+.gn{max-width:900px;margin:0 auto}
+.gn h2{font-size:20px;color:var(--seal);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--seal);font-weight:700}
+.gn h3{font-size:17px;color:var(--ink);margin:22px 0 10px;font-weight:600}
+.gn p{font-size:15px;line-height:2;color:var(--ink-2);margin:0 0 12px}
+.gn ul{margin:8px 0 16px;padding-left:22px}
+.gn li{font-size:15px;line-height:1.9;color:var(--ink-2);margin-bottom:6px}
+.gn .tag{display:inline-block;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:1px 10px;font-size:13px;font-weight:600;color:var(--seal);margin:0 3px}
+.gn .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+@media(max-width:680px){.gn .grid-2{grid-template-columns:1fr}}
+.gn .card{border:1px solid var(--line);border-radius:5px;padding:16px 18px;background:var(--surface)}
+.gn .card h4{font-size:15px;color:var(--seal);margin:0 0 6px}
+.gn .card p{font-size:14px;line-height:1.8;margin:0}
+.gn table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.gn th{background:var(--seal);color:var(--surface);padding:8px 10px;text-align:left;font-weight:600}
+.gn td{border-bottom:1px solid var(--line);padding:7px 10px;color:var(--ink-2)}
+.gn tr:nth-child(even) td{background:rgba(246,239,217,.5)}
+.gn .note{border-left:3px solid var(--seal);background:var(--surface);padding:12px 18px;margin:16px 0;font-size:14px;line-height:1.8}
+.gn .sep{height:1px;background:var(--line);margin:30px 0}
+</style>
+
+<div class="gn">
+
+<!-- 1. NGU HANH -->
+<h2>1. Ngũ Hành</h2>
+<p>Ngũ Hành là năm yếu tố: <b>Kim</b>, <b>Mộc</b>, <b>Thủy</b>, <b>Hỏa</b>, <b>Thổ</b>.</p>
+<h3>Tương Sinh</h3>
+<p>Mộc → Hỏa → Thổ → Kim → Thủy → Mộc.</p>
+<h3>Tương Khắc</h3>
+<p>Mộc khắc Thổ → Thổ khắc Thủy → Thủy khắc Hỏa → Hỏa khắc Kim → Kim khắc Mộc.</p>
+<div class="grid-2">
+<div class="card"><h4>Màu sắc</h4><p>Vàng=Kim, Xanh lá=Mộc, Xanh dương=Thủy, Đỏ=Hỏa, Nâu=Thổ.</p></div>
+<div class="card"><h4>Phương hướng</h4><p>Đông=Mộc, Nam=Hỏa, Trung tâm=Thổ, Tây=Kim, Bắc=Thủy.</p></div>
 </div>
-<div class="panel" style="max-width:700px;margin:20px auto">
-  <div class="panel-title">Tường Giải <span class="tc" style="font-size:.7em">詳解</span></div>
-  <p class="muted" style="line-height:2"><b>Nguyên (元)</b> = 129.600 năm · <b>Hội (會)</b> = 10.800 năm · <b>Vận (運)</b> = 360 năm · <b>Thế (世)</b> = 30 năm.<br>
-  Đương tiền chính xử Đệ Thất Hội (Ngọ Hội), chủ văn minh xương thịnh.<br>
-  Nhân loại chính tại "Đại Quá Quái" vận — chủ đại biến cách chi thì.</p>
+
+<div class="sep"></div>
+
+<!-- 2. THIEN CAN DIA CHI -->
+<h2>2. Thiên Can, Địa Chi và 12 Con Giáp</h2>
+<p>Thiên Can (10) + Địa Chi (12) = Can Chi (60 tổ hợp).</p>
+<h3>Thiên Can</h3>
+<table>
+<tr><th>Can</th><th>Ngũ Hành</th></tr>
+<tr><td>Giáp</td><td>Mộc dương</td></tr>
+<tr><td>Ất</td><td>Mộc âm</td></tr>
+<tr><td>Bính</td><td>Hỏa dương</td></tr>
+<tr><td>Đinh</td><td>Hỏa âm</td></tr>
+<tr><td>Mậu</td><td>Thổ dương</td></tr>
+<tr><td>Kỷ</td><td>Thổ âm</td></tr>
+<tr><td>Canh</td><td>Kim dương</td></tr>
+<tr><td>Tân</td><td>Kim âm</td></tr>
+<tr><td>Nhâm</td><td>Thủy dương</td></tr>
+<tr><td>Quý</td><td>Thủy âm</td></tr>
+</table>
+
+<h3>Địa Chi và 12 Con Giáp</h3>
+<p>Mỗi Địa Chi có một con giáp tượng trưng, kèm Ngũ Hành và khung giờ:</p>
+<table>
+<tr><th>Chi</th><th>Con giáp</th><th>Giờ</th><th>Hành</th></tr>
+<tr><td>Tý</td><td>Chuột</td><td>23h-1h</td><td>Thủy</td></tr>
+<tr><td>Sửu</td><td>Trâu</td><td>1h-3h</td><td>Thổ</td></tr>
+<tr><td>Dần</td><td>Hổ</td><td>3h-5h</td><td>Mộc</td></tr>
+<tr><td>Mão</td><td>Mèo</td><td>5h-7h</td><td>Mộc</td></tr>
+<tr><td>Thìn</td><td>Rồng</td><td>7h-9h</td><td>Thổ</td></tr>
+<tr><td>Tỵ</td><td>Rắn</td><td>9h-11h</td><td>Hỏa</td></tr>
+<tr><td>Ngọ</td><td>Ngựa</td><td>11h-13h</td><td>Hỏa</td></tr>
+<tr><td>Mùi</td><td>Dê</td><td>13h-15h</td><td>Thổ</td></tr>
+<tr><td>Thân</td><td>Khỉ</td><td>15h-17h</td><td>Kim</td></tr>
+<tr><td>Dậu</td><td>Gà</td><td>17h-19h</td><td>Kim</td></tr>
+<tr><td>Tuất</td><td>Chó</td><td>19h-21h</td><td>Thổ</td></tr>
+<tr><td>Hợi</td><td>Lợn</td><td>21h-23h</td><td>Thủy</td></tr>
+</table>
+
+<div class="sep"></div>
+
+<!-- 3. BAT TU -->
+<h2>3. Bát Tự</h2>
+<p>Bát Tự gồm 4 trụ (năm, tháng, ngày, giờ) = 8 chữ.</p>
+<p><b>Nhật Chủ</b> = Thiên Can của ngày = đại diện cho bản thân.</p>
+<h3>Thập Thần</h3>
+<table>
+<tr><th>Thần</th><th>Ý nghĩa</th></tr>
+<tr><td>Tỷ Kiên</td><td>Anh em, bạn đồng trang lứa</td></tr>
+<tr><td>Kiếp Tài</td><td>Bạn bè, đồng nghiệp, hao tài</td></tr>
+<tr><td>Thực Thần</td><td>Tài năng, con cái, phúc lộc</td></tr>
+<tr><td>Thương Quan</td><td>Tài hoa, nổi loạn, kiện tụng</td></tr>
+<tr><td>Thiên Tài</td><td>Tiền bất ngờ, đầu tư</td></tr>
+<tr><td>Chính Tài</td><td>Lương ổn định, vợ</td></tr>
+<tr><td>Thất Sát</td><td>Áp lực, thử thách, quyền uy</td></tr>
+<tr><td>Chính Quan</td><td>Danh vọng, chức vụ, chồng</td></tr>
+<tr><td>Thiên Ấn</td><td>Học đặc biệt, tâm linh</td></tr>
+<tr><td>Chính Ấn</td><td>Học vấn, bằng cấp, mẹ</td></tr>
+</table>
+<h3>Thân cường - nhược</h3>
+<p><b>Thân cường</b>: khỏe, quyết đoán, chịu áp lực tốt → nên dùng Tài Quan.</p>
+<p><b>Thân nhược</b>: nhạy cảm, dễ bị áp lực → cần Ấn Tỷ nâng đỡ.</p>
+<h3>Đại Vận</h3>
+<p>10 năm đổi một Đại Vận. Vận tốt thì dù mệnh xấu cũng đỡ, vận xấu thì khó khăn.</p>
+
+<div class="sep"></div>
+
+<!-- 4. TU VI -->
+<h2>4. Tử Vi</h2>
+<h3>12 Cung</h3>
+<table>
+<tr><th>Cung</th><th>Ý nghĩa</th></tr>
+<tr><td>Mệnh</td><td>Bản thân, tính cách</td></tr>
+<tr><td>Cha Mẹ</td><td>Cha mẹ, dòng họ</td></tr>
+<tr><td>Phúc Đức</td><td>Tâm linh, phúc phần</td></tr>
+<tr><td>Nhà Cửa</td><td>Nhà đất, gia đình</td></tr>
+<tr><td>Sự Nghiệp</td><td>Quan lộc, công danh</td></tr>
+<tr><td>Bạn Bè</td><td>Bạn bè, cấp dưới</td></tr>
+<tr><td>Ra Ngoài</td><td>Đi xa, biến động</td></tr>
+<tr><td>Sức Khỏe</td><td>Bệnh tật</td></tr>
+<tr><td>Tiền Bạc</td><td>Tài chính</td></tr>
+<tr><td>Con Cái</td><td>Con cái, thụ hưởng</td></tr>
+<tr><td>Vợ Chồng</td><td>Hôn nhân</td></tr>
+<tr><td>Anh Em</td><td>Anh chị em</td></tr>
+</table>
+<h3>Chính Tinh</h3>
+<div class="grid-2">
+<div class="card"><h4>Tử Vi</h4><p>Vua, quyền uy, sang trọng.</p></div>
+<div class="card"><h4>Thiên Cơ</h4><p>Trí tuệ, tính toán.</p></div>
+<div class="card"><h4>Thái Dương</h4><p>Mặt Trời, hào phóng.</p></div>
+<div class="card"><h4>Vũ Khúc</h4><p>Tài chính, cứng rắn.</p></div>
+<div class="card"><h4>Thiên Đồng</h4><p>Phúc, an nhàn.</p></div>
+<div class="card"><h4>Liêm Trinh</h4><p>Quyền lực, uy nghiêm.</p></div>
+<div class="card"><h4>Thiên Phủ</h4><p>Kho, ổn định.</p></div>
+<div class="card"><h4>Thái Âm</h4><p>Mặt Trăng, dịu dàng.</p></div>
+<div class="card"><h4>Tham Lang</h4><p>Đào hoa, nghệ thuật.</p></div>
+<div class="card"><h4>Cự Môn</h4><p>Khẩu tài, thị phi.</p></div>
+<div class="card"><h4>Thiên Tướng</h4><p>Hòa giải, trợ giúp.</p></div>
+<div class="card"><h4>Thiên Lương</h4><p>Ân tinh, từ thiện.</p></div>
+<div class="card"><h4>Thất Sát</h4><p>Dũng mãnh, đột phá.</p></div>
+<div class="card"><h4>Phá Quân</h4><p>Phá cũ xây mới.</p></div>
 </div>
+<h3>Tứ Hóa</h3>
+<p>Lộc (tốt-tài), Quyền (tốt-quyền lực), Khoa (tốt-danh), Kỵ (xấu-phiền).</p>
+
+<div class="sep"></div>
+
+<!-- 5. CACH DOC -->
+<h2>5. Cách Đọc Kết Quả</h2>
+<p><b>Bát Tự:</b> Nhật Chủ → Thân cường/nhược → Dụng Thần → Đại Vận → Thập Thần.</p>
+<p><b>Tử Vi:</b> Mệnh cung (chính tinh) → Sự Nghiệp + Tiền Bạc → Tứ Hóa → Các cung nhân duyên → Sao xấu ở đâu cần đề phòng.</p>
+<p><b>Giải thích:</b> Kết quả dựa trên ngày giờ sinh và <b>Chân Thái Dương Thời</b> (hiệu chỉnh theo kinh độ).</p>
+
+<div class="sep"></div>
+<div class="note">
+<b>Lưu ý:</b> Mệnh lý học là tri thức tham khảo. Kết quả không thay thế tư vấn chuyên môn. Hãy soi chiếu bản thân, đừng phụ thuộc hoàn toàn.
 </div>
+
+</div>
+
 <footer class="kd-footer">
   <div class="row">
     <div class="fbrand"><div class="fseal">易</div><div class="ftext">Huyền Cơ Đường · 易經 — Trí tuệ biến dịch phương Đông.</div></div>
-    <div cla
+    <div class="flinks"><a href="index.html">Gieo Quẻ</a><a href="bat-tu.html">Bát Tự</a><a href="hop-hon.html">Hôn Nhân</a><a href="hoang-lich.html">Hoàng Lịch</a><a href="64-que.html">64 Quẻ</a></div>
+  </div>
+  <div class="fhan">占 卜 · 易 經 · 八 卦 · 五 行 · 六 十 四 卦</div>
+</footer>
 </body>
 </html>
