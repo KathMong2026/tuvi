@@ -207,20 +207,73 @@ document.addEventListener('DOMContentLoaded', function() {
 .gn tr:nth-child(even) td{background:rgba(246,239,217,.5)}
 .gn .note{border-left:3px solid var(--seal);background:var(--surface);padding:12px 18px;margin:16px 0;font-size:14px;line-height:1.8}
 .gn .sep{height:1px;background:var(--line);margin:30px 0}
+
+/* Vòng tròn Ngũ Hành */
+.gn .wx-cycle{display:flex;justify-content:center;align-items:center;margin:20px 0}
+.gn .wx-ring{position:relative;width:280px;height:280px;border-radius:50%;background:var(--surface);border:2px solid var(--line)}
+@media(max-width:600px){.gn .wx-ring{width:220px;height:220px}}
+.gn .wx-ring-item{position:absolute;width:70px;height:70px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 3px 10px rgba(0,0,0,.12);transition:transform .2s;border:2px solid}
+.gn .wx-ring-item:hover{transform:scale(1.12)}
+.gn .wx-ring-item .wx-label{font-size:9px;opacity:.9;margin-top:1px}
+.gn .wx-cycle-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+.gn .wx-legend-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-2)}
+.gn .wx-legend-dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.1);flex-shrink:0}
+.gn .wx-arrow-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:8px 0}
+.gn .wx-arrow-group{display:flex;align-items:center;gap:10px;font-size:14px;padding:6px 14px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.gn .wx-arrow-group .arr{font-size:18px;color:var(--seal)}
+.gn .wx-color-demo{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+.gn .wx-color-cell{text-align:center;padding:20px 8px;border-radius:8px;color:#fff;font-weight:600;font-size:15px;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.gn .wx-color-cell .wxc-sub{font-size:11px;opacity:.85;font-weight:400;margin-top:4px}
 </style>
 
 <div class="gn">
 
 <!-- 1. NGU HANH -->
 <h2>1. Ngũ Hành</h2>
-<p>Ngũ Hành là năm yếu tố: <b>Kim</b>, <b>Mộc</b>, <b>Thủy</b>, <b>Hỏa</b>, <b>Thổ</b>.</p>
-<h3>Tương Sinh</h3>
-<p>Mộc → Hỏa → Thổ → Kim → Thủy → Mộc.</p>
-<h3>Tương Khắc</h3>
-<p>Mộc khắc Thổ → Thổ khắc Thủy → Thủy khắc Hỏa → Hỏa khắc Kim → Kim khắc Mộc.</p>
+<p>Ngũ Hành là năm yếu tố: <b>Kim</b> (kim loại), <b>Mộc</b> (gỗ), <b>Thủy</b> (nước), <b>Hỏa</b> (lửa), <b>Thổ</b> (đất).</p>
+
+<h3>Màu sắc Ngũ Hành</h3>
+<div class="wx-color-demo">
+<div class="wx-color-cell" style="background:#b8893b"><span>金 Kim</span><div class="wxc-sub">Vàng · Nâu</div></div>
+<div class="wx-color-cell" style="background:#4a6741"><span>木 Mộc</span><div class="wxc-sub">Xanh lá</div></div>
+<div class="wx-color-cell" style="background:#3a5974"><span>水 Thủy</span><div class="wxc-sub">Xanh dương</div></div>
+<div class="wx-color-cell" style="background:#9e3020"><span>火 Hỏa</span><div class="wxc-sub">Đỏ · Hồng</div></div>
+<div class="wx-color-cell" style="background:#8b6914"><span>土 Thổ</span><div class="wxc-sub">Nâu đất</div></div>
+</div>
+
+<h3>Vòng Tương Sinh</h3>
+<p>Mỗi hành <b>sinh ra</b> hành tiếp theo — nuôi dưỡng nhau, tạo thành một vòng tròn thuận:</p>
+<div class="wx-cycle-legend">
+<span class="wx-legend-item"><span class="wx-legend-dot" style="background:#b8893b"></span>Kim</span>
+<span class="wx-legend-item"><span class="wx-legend-dot" style="background:#4a6741"></span>Mộc</span>
+<span class="wx-legend-item"><span class="wx-legend-dot" style="background:#3a5974"></span>Thủy</span>
+<span class="wx-legend-item"><span class="wx-legend-dot" style="background:#9e3020"></span>Hỏa</span>
+<span class="wx-legend-item"><span class="wx-legend-dot" style="background:#8b6914"></span>Thổ</span>
+</div>
+<div class="wx-cycle">
+<div class="wx-ring">
+<div class="wx-ring-item" style="top:5px;left:50%;transform:translateX(-50%);background:#b8893b;border-color:#967a32;color:#fff"><div>金</div><div class="wx-label">Kim</div></div>
+<div class="wx-ring-item" style="top:50%;right:5px;transform:translateY(-50%);background:#4a6741;border-color:#3a5634;color:#fff"><div>木</div><div class="wx-label">Mộc</div></div>
+<div class="wx-ring-item" style="bottom:5px;left:50%;transform:translateX(-50%);background:#3a5974;border-color:#2e4760;color:#fff"><div>水</div><div class="wx-label">Thủy</div></div>
+<div class="wx-ring-item" style="top:50%;left:5px;transform:translateY(-50%);background:#9e3020;border-color:#7e2619;color:#fff"><div>火</div><div class="wx-label">Hỏa</div></div>
+<div class="wx-ring-item" style="top:50%;left:50%;transform:translate(-50%,-50%);background:#8b6914;border-color:#6f5310;color:#fff"><div>土</div><div class="wx-label">Thổ</div></div>
+</div>
+</div>
+<div class="wx-arrow-row">
+<span class="wx-arrow-group"><b>Mộc</b> <span class="arr">→</span> <b>Hỏa</b> <span class="arr">→</span> <b>Thổ</b> <span class="arr">→</span> <b>Kim</b> <span class="arr">→</span> <b>Thủy</b> <span class="arr">→</span> <b>Mộc</b></span>
+</div>
+<p style="text-align:center;font-size:14px;color:var(--ink-3);margin-top:8px">Mộc sinh Hỏa — Hỏa sinh Thổ — Thổ sinh Kim — Kim sinh Thủy — Thủy sinh Mộc</p>
+
+<h3>Vòng Tương Khắc</h3>
+<p>Mỗi hành <b>khắc chế</b> một hành khác — kiểm soát, cân bằng lẫn nhau:</p>
+<div class="wx-arrow-row">
+<span class="wx-arrow-group"><b>Mộc</b> <span class="arr" style="color:var(--ink-4)">✕</span> <b>Thổ</b> <span class="arr" style="color:var(--ink-4)">✕</span> <b>Thủy</b> <span class="arr" style="color:var(--ink-4)">✕</span> <b>Hỏa</b> <span class="arr" style="color:var(--ink-4)">✕</span> <b>Kim</b> <span class="arr" style="color:var(--ink-4)">✕</span> <b>Mộc</b></span>
+</div>
+<p style="text-align:center;font-size:14px;color:var(--ink-3);margin-top:8px">Mộc khắc Thổ — Thổ khắc Thủy — Thủy khắc Hỏa — Hỏa khắc Kim — Kim khắc Mộc</p>
+
 <div class="grid-2">
-<div class="card"><h4>Màu sắc</h4><p>Vàng=Kim, Xanh lá=Mộc, Xanh dương=Thủy, Đỏ=Hỏa, Nâu=Thổ.</p></div>
-<div class="card"><h4>Phương hướng</h4><p>Đông=Mộc, Nam=Hỏa, Trung tâm=Thổ, Tây=Kim, Bắc=Thủy.</p></div>
+<div class="card"><h4>Phương hướng</h4><p>Đông (Mộc) — Nam (Hỏa) — Trung tâm (Thổ) — Tây (Kim) — Bắc (Thủy).</p></div>
+<div class="card"><h4>Mùa vụ</h4><p>Xuân (Mộc) — Hạ (Hỏa) — Giữa hạ (Thổ) — Thu (Kim) — Đông (Thủy).</p></div>
 </div>
 
 <div class="sep"></div>
@@ -254,100 +307,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <tr><td>Thìn</td><td>Rồng</td><td>7h-9h</td><td>Thổ</td></tr>
 <tr><td>Tỵ</td><td>Rắn</td><td>9h-11h</td><td>Hỏa</td></tr>
 <tr><td>Ngọ</td><td>Ngựa</td><td>11h-13h</td><td>Hỏa</td></tr>
-<tr><td>Mùi</td><td>Dê</td><td>13h-15h</td><td>Thổ</td></tr>
-<tr><td>Thân</td><td>Khỉ</td><td>15h-17h</td><td>Kim</td></tr>
-<tr><td>Dậu</td><td>Gà</td><td>17h-19h</td><td>Kim</td></tr>
-<tr><td>Tuất</td><td>Chó</td><td>19h-21h</td><td>Thổ</td></tr>
-<tr><td>Hợi</td><td>Lợn</td><td>21h-23h</td><td>Thủy</td></tr>
-</table>
-
-<div class="sep"></div>
-
-<!-- 3. BAT TU -->
-<h2>3. Bát Tự</h2>
-<p>Bát Tự gồm 4 trụ (năm, tháng, ngày, giờ) = 8 chữ.</p>
-<p><b>Nhật Chủ</b> = Thiên Can của ngày = đại diện cho bản thân.</p>
-<h3>Thập Thần</h3>
-<table>
-<tr><th>Thần</th><th>Ý nghĩa</th></tr>
-<tr><td>Tỷ Kiên</td><td>Anh em, bạn đồng trang lứa</td></tr>
-<tr><td>Kiếp Tài</td><td>Bạn bè, đồng nghiệp, hao tài</td></tr>
-<tr><td>Thực Thần</td><td>Tài năng, con cái, phúc lộc</td></tr>
-<tr><td>Thương Quan</td><td>Tài hoa, nổi loạn, kiện tụng</td></tr>
-<tr><td>Thiên Tài</td><td>Tiền bất ngờ, đầu tư</td></tr>
-<tr><td>Chính Tài</td><td>Lương ổn định, vợ</td></tr>
-<tr><td>Thất Sát</td><td>Áp lực, thử thách, quyền uy</td></tr>
-<tr><td>Chính Quan</td><td>Danh vọng, chức vụ, chồng</td></tr>
-<tr><td>Thiên Ấn</td><td>Học đặc biệt, tâm linh</td></tr>
-<tr><td>Chính Ấn</td><td>Học vấn, bằng cấp, mẹ</td></tr>
-</table>
-<h3>Thân cường - nhược</h3>
-<p><b>Thân cường</b>: khỏe, quyết đoán, chịu áp lực tốt → nên dùng Tài Quan.</p>
-<p><b>Thân nhược</b>: nhạy cảm, dễ bị áp lực → cần Ấn Tỷ nâng đỡ.</p>
-<h3>Đại Vận</h3>
-<p>10 năm đổi một Đại Vận. Vận tốt thì dù mệnh xấu cũng đỡ, vận xấu thì khó khăn.</p>
-
-<div class="sep"></div>
-
-<!-- 4. TU VI -->
-<h2>4. Tử Vi</h2>
-<h3>12 Cung</h3>
-<table>
-<tr><th>Cung</th><th>Ý nghĩa</th></tr>
-<tr><td>Mệnh</td><td>Bản thân, tính cách</td></tr>
-<tr><td>Cha Mẹ</td><td>Cha mẹ, dòng họ</td></tr>
-<tr><td>Phúc Đức</td><td>Tâm linh, phúc phần</td></tr>
-<tr><td>Nhà Cửa</td><td>Nhà đất, gia đình</td></tr>
-<tr><td>Sự Nghiệp</td><td>Quan lộc, công danh</td></tr>
-<tr><td>Bạn Bè</td><td>Bạn bè, cấp dưới</td></tr>
-<tr><td>Ra Ngoài</td><td>Đi xa, biến động</td></tr>
-<tr><td>Sức Khỏe</td><td>Bệnh tật</td></tr>
-<tr><td>Tiền Bạc</td><td>Tài chính</td></tr>
-<tr><td>Con Cái</td><td>Con cái, thụ hưởng</td></tr>
-<tr><td>Vợ Chồng</td><td>Hôn nhân</td></tr>
-<tr><td>Anh Em</td><td>Anh chị em</td></tr>
-</table>
-<h3>Chính Tinh</h3>
-<div class="grid-2">
-<div class="card"><h4>Tử Vi</h4><p>Vua, quyền uy, sang trọng.</p></div>
-<div class="card"><h4>Thiên Cơ</h4><p>Trí tuệ, tính toán.</p></div>
-<div class="card"><h4>Thái Dương</h4><p>Mặt Trời, hào phóng.</p></div>
-<div class="card"><h4>Vũ Khúc</h4><p>Tài chính, cứng rắn.</p></div>
-<div class="card"><h4>Thiên Đồng</h4><p>Phúc, an nhàn.</p></div>
-<div class="card"><h4>Liêm Trinh</h4><p>Quyền lực, uy nghiêm.</p></div>
-<div class="card"><h4>Thiên Phủ</h4><p>Kho, ổn định.</p></div>
-<div class="card"><h4>Thái Âm</h4><p>Mặt Trăng, dịu dàng.</p></div>
-<div class="card"><h4>Tham Lang</h4><p>Đào hoa, nghệ thuật.</p></div>
-<div class="card"><h4>Cự Môn</h4><p>Khẩu tài, thị phi.</p></div>
-<div class="card"><h4>Thiên Tướng</h4><p>Hòa giải, trợ giúp.</p></div>
-<div class="card"><h4>Thiên Lương</h4><p>Ân tinh, từ thiện.</p></div>
-<div class="card"><h4>Thất Sát</h4><p>Dũng mãnh, đột phá.</p></div>
-<div class="card"><h4>Phá Quân</h4><p>Phá cũ xây mới.</p></div>
-</div>
-<h3>Tứ Hóa</h3>
-<p>Lộc (tốt-tài), Quyền (tốt-quyền lực), Khoa (tốt-danh), Kỵ (xấu-phiền).</p>
-
-<div class="sep"></div>
-
-<!-- 5. CACH DOC -->
-<h2>5. Cách Đọc Kết Quả</h2>
-<p><b>Bát Tự:</b> Nhật Chủ → Thân cường/nhược → Dụng Thần → Đại Vận → Thập Thần.</p>
-<p><b>Tử Vi:</b> Mệnh cung (chính tinh) → Sự Nghiệp + Tiền Bạc → Tứ Hóa → Các cung nhân duyên → Sao xấu ở đâu cần đề phòng.</p>
-<p><b>Giải thích:</b> Kết quả dựa trên ngày giờ sinh và <b>Chân Thái Dương Thời</b> (hiệu chỉnh theo kinh độ).</p>
-
-<div class="sep"></div>
-<div class="note">
-<b>Lưu ý:</b> Mệnh lý học là tri thức tham khảo. Kết quả không thay thế tư vấn chuyên môn. Hãy soi chiếu bản thân, đừng phụ thuộc hoàn toàn.
-</div>
-
-</div>
-
-<footer class="kd-footer">
-  <div class="row">
-    <div class="fbrand"><div class="fseal">易</div><div class="ftext">Huyền Cơ Đường · 易經 — Trí tuệ biến dịch phương Đông.</div></div>
-    <div class="flinks"><a href="index.html">Gieo Quẻ</a><a href="bat-tu.html">Bát Tự</a><a href="hop-hon.html">Hôn Nhân</a><a href="hoang-lich.html">Hoàng Lịch</a><a href="64-que.html">64 Quẻ</a></div>
-  </div>
-  <div class="fhan">占 卜 · 易 經 · 八 卦 · 五 行 · 六 十 四 卦</div>
-</footer>
+<tr><t
 </body>
 </html>
