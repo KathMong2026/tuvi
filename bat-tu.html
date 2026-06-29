@@ -260,7 +260,7 @@ input,select{font-family:inherit}
       <button data-tab="tuvi"><span class="tc">紫微</span> Tử Vi</button>
       <button data-tab="tra"><span class="tc">搜</span> Tra cứu</button>
     </div>
-    <section id="pane-batu"><div id="batuOut"><p class="muted" style="text-align:center;padding:40px" data-i18n="batu.ziwei.empty">Nhập thông tin sinh và nhấn "Lập Mệnh Bàn" để xem kết quả.</p></div><div class="verdict-section" id="verdictSection"><div id="verdictOut"></div></div></section>
+    <section id="pane-batu"><div id="batuOut"><p class="muted" style="text-align:center;padding:40px" data-i18n="batu.ziwei.empty">Nhập thông tin sinh và nhấn "Lập Mệnh Bàn" để xem kết quả.</p></div></section>
     <section id="pane-tuvi" class="hide"><div id="tuviOut"><p class="muted" style="text-align:center;padding:40px" data-i18n="batu.ziwei.emptyTv">Nhập thông tin sinh và nhấn "Lập Mệnh Bàn" để xem kết quả Tử Vi.</p></div></section>
     <section id="pane-tra" class="hide">
       <div class="search-tab">
@@ -269,10 +269,13 @@ input,select{font-family:inherit}
         <div class="search-results" id="searchResults"></div>
       </div>
     </section>
-    <!-- Verdict: phân tích mệnh bàn (đã chuyển vào pane-batu, xóa container cũ) -->
   </div>
+</div>
 
-  <div class="form-col" id="formCol">
+<!-- Verdict: mục riêng, thấy ở cả Bát Tự lẫn Tử Vi -->
+<div class="verdict-section" id="verdictSection"><div id="verdictOut"></div></div>
+
+<div class="form-col" id="formCol">
     <div class="form-frame">
       <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
       <div class="ff-title">八字算命 · 紫微斗數命盤</div>
@@ -1363,3 +1366,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
