@@ -1155,12 +1155,12 @@ function renderVerdict(r, zw) {
   ['Mộc','Hỏa','Thổ','Kim','Thủy'].forEach(function(wx){ wp[wx] = Math.round((wc[wx]||0) / totalWX * 100); });
 
   // Bát Tự pattern
-  var baziPattern = dmStrength.indexOf('Thân nhược') >= 0 ? '官旺身弱' : '身强';
+  var baziPattern = dmStrength.indexOf('Thân nhược') >= 0 ? 'Quan vượng thân nhược' : 'Thân cường';
 
   // Tử Vi mệnh cung
   var menhCung = zw.palaces[zw.menhCung];
   var menhMainStars = menhCung ? menhCung.chinhTinh.map(function(s){return s.name}).join('、') : '';
-  var tuviPattern = menhMainStars ? menhMainStars + '坐命' : '';
+  var tuviPattern = menhMainStars ? menhMainStars + ' tọa mệnh' : '';
 
   // Tứ Hóa
   var hoaInfo = [];
@@ -1194,78 +1194,78 @@ function renderVerdict(r, zw) {
   // WX summary text
   var wxSummary = [];
   ['Mộc','Hỏa','Thổ','Kim','Thủy'].forEach(function(wx){
-    wxSummary.push(wx + wp[wx] + (wp[wx] >= 40 ? '极旺' : wp[wx] >= 20 ? '旺' : '弱'));
+    wxSummary.push(wx + wp[wx] + (wp[wx] >= 40 ? ' cực vượng' : wp[wx] >= 20 ? ' vượng' : ' yếu'));
   });
 
-  // Bát Tự analysis
-  var baziAnalysis = '日主' + dmName + ' <b>' + HC.WX_CN[dm.stem] + '</b> 生于午月，火旺金囚，身偏弱（自身根基偏薄）。五行能量' + wxSummary.join('，') + '。格为【' + baziPattern + '】。用神取' + r.yongShen + '（帮身）与水（调候制火），忌神为火。此局属「' + baziPattern + '」，需' + r.yongShen + '水扶助方能担官。';
+  // Bát Tự analysis (tiếng Việt)
+  var baziAnalysis = 'Nhật chủ ' + dmName + ' <b>' + HC.WX_CN[dm.stem] + '</b> sinh tháng Ngọ, Hỏa vượng Kim tù, thân nhược (nền tảng hơi mỏng). Ngũ hành: ' + wxSummary.join(', ') + '. Cách cục: 【' + baziPattern + '】. Dụng thần lấy ' + r.yongShen + ' (trợ thân) và Thủy (điều hầu chế Hỏa), Kỵ thần là Hỏa. Cục này thuộc «' + baziPattern + '», cần ' + r.yongShen + ' Thủy phù trợ mới gánh nổi Quan.';
 
-  // Tử Vi analysis
-  var tuviAnalysis = '命宫主星' + menhMainStars + '，属「' + tuviPattern + '」格，性格刚毅果敢，喜破旧立新。五行局为' + zw.cucName + '。';
-  if (hoaInfo.length > 0) tuviAnalysis += '生年四化：' + hoaInfo.join('、') + '。';
-  tuviAnalysis += '四化分布未明示宫位，但整体显示事业与人际有助力，财帛则需留心守成。';
+  // Tử Vi analysis (tiếng Việt)
+  var tuviAnalysis = 'Mệnh cung chủ tinh ' + menhMainStars + ', thuộc cách «' + tuviPattern + '», tính cương nghị quả cảm, ưa phá cũ lập mới. Ngũ hành cục là ' + zw.cucName + '.';
+  if (hoaInfo.length > 0) tuviAnalysis += ' Sinh niên Tứ Hóa: ' + hoaInfo.join(', ') + '.';
+  tuviAnalysis += ' Tứ Hóa chưa rõ cung vị cụ thể, song nhìn chung sự nghiệp và nhân tế có trợ lực, tài bạch cần cẩn thận giữ gìn.';
 
-  // Đại vận Lưu niên analysis
-  var dvAnalysis = '当前正行第' + (dvIdx + 1) + '大运' + dvGZ + '（' + dvStr + '），';
+  // Đại vận Lưu niên analysis (tiếng Việt)
+  var dvAnalysis = 'Đang đi đại vận thứ ' + (dvIdx + 1) + ' ' + dvGZ + ' (' + dvStr + '), ';
   if (dmStrength.indexOf('Thân nhược') >= 0) {
-    dvAnalysis += '印比助身，为扶助运势的阶段。';
+    dvAnalysis += 'Ấn Tỷ tương trợ, là giai đoạn phù trợ vận thế. ';
   } else {
-    dvAnalysis += '运势平稳。';
+    dvAnalysis += 'vận thế bình ổn. ';
   }
-  dvAnalysis += '流年' + lnGZ + '，火势极旺为忌神，加重官星克身，今年易面临工作压力与责任考验。然大运' + dvGZ + '有力支撑，可缓解流年之困。整体而言，此大运根基较稳，流年虽有挑战但非不可克服，宜以稳健步伐应对。';
+  dvAnalysis += 'Lưu niên ' + lnGZ + ' Hỏa thế rất vượng, là Kỵ thần, làm nặng thêm Quan tinh khắc thân, năm nay dễ đối mặt áp lực công việc và trách nhiệm. Tuy nhiên đại vận ' + dvGZ + ' chống đỡ vững, có thể giảm nhẹ khốn khó. Nhìn chung đại vận này nền khá ổn, lưu niên tuy có thách thức nhưng không phải không vượt qua được, nên tiến bước vững vàng.';
 
   // === BUILD HTML ===
   var html = '';
   html += '<div class="ftn2-peek-card">';
-  html += '<div class="ftn2-peek-head dv-card-head"><span class="dv-card-num">1</span><span class="dv-card-title">粗略分析</span></div>';
+  html += '<div class="ftn2-peek-head dv-card-head"><span class="dv-card-num">1</span><span class="dv-card-title">Sơ lược phân tích</span></div>';
 
   // Bát Tự
-  html += '<div class="verdict-subhead">八字命盘 · 已定盘</div>';
-  html += '<div class="verdict-row"><span class="vr-label">日主</span><span class="vr-value">' + HC.HS_CN[dm.stem] + HC.EB_CN[dm.branch] + ' · ' + dmStrength + '</span></div>';
-  html += '<div class="verdict-row"><span class="vr-label">用神</span><span class="vr-value">' + r.yongShen + ' · ' + HC.WX_GEN[r.yongShen] + ' · 兼水调候 · 忌' + r.kyThan + '</span></div>';
-  html += '<div class="verdict-row"><span class="vr-label">喜用方位</span><span class="vr-value">西 · 素白色</span></div>';
-  html += '<div class="verdict-row"><span class="vr-label">当前大运</span><span class="vr-value">第' + (dvIdx + 1) + '运 · ' + dvGZ + '</span></div>';
-  html += '<div class="verdict-row"><span class="vr-label">当年流年</span><span class="vr-value">' + lnGZ + '</span></div>';
+  html += '<div class="verdict-subhead">Bát Tự mệnh bàn</div>';
+  html += '<div class="verdict-row"><span class="vr-label">Nhật Chủ</span><span class="vr-value">' + HC.HS_CN[dm.stem] + HC.EB_CN[dm.branch] + ' · ' + dmStrength + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">Dụng Thần</span><span class="vr-value">' + r.yongShen + ' · ' + HC.WX_GEN[r.yongShen] + ' · kiêm Thủy điều hầu · Kỵ ' + r.kyThan + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">Phương vị hỷ</span><span class="vr-value">Tây · màu trắng tinh</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">Đại vận hiện</span><span class="vr-value">Đại vận thứ ' + (dvIdx + 1) + ' · ' + dvGZ + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">Lưu niên</span><span class="vr-value">' + lnGZ + '</span></div>';
 
   // Tử Vi
-  html += '<div class="verdict-subhead">紫微命盘 · 已定盘</div>';
-  html += '<div class="verdict-row"><span class="vr-label">命宫主星</span><span class="vr-value">' + menhMainStars + '</span></div>';
-  html += '<div class="verdict-row"><span class="vr-label">五行局</span><span class="vr-value">' + zw.cucName + '</span></div>';
+  html += '<div class="verdict-subhead">Tử Vi mệnh bàn</div>';
+  html += '<div class="verdict-row"><span class="vr-label">Mệnh chủ tinh</span><span class="vr-value">' + menhMainStars + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">Ngũ Hành Cục</span><span class="vr-value">' + zw.cucName + '</span></div>';
   if (hoaInfo.length > 0) {
-    html += '<div class="verdict-row"><span class="vr-label">生年四化</span><span class="vr-value">' + hoaInfo.join(' · ') + '</span></div>';
+    html += '<div class="verdict-row"><span class="vr-label">Tứ Hóa</span><span class="vr-value">' + hoaInfo.join(' · ') + '</span></div>';
   }
 
   // Analysis text
   html += '<div class="verdict-divider"></div>';
   html += '<div class="verdict-analysis">';
-  html += '<p><strong>八字分析</strong><br>' + baziAnalysis + '</p>';
-  html += '<p><strong>紫微斗数分析</strong><br>' + tuviAnalysis + '</p>';
-  html += '<p><strong>大运流年分析</strong><br>' + dvAnalysis + '</p></div>';
+  html += '<p><strong>Phân tích Bát Tự</strong><br>' + baziAnalysis + '</p>';
+  html += '<p><strong>Phân tích Tử Vi</strong><br>' + tuviAnalysis + '</p>';
+  html += '<p><strong>Phân tích Đại vận - Lưu niên</strong><br>' + dvAnalysis + '</p></div>';
 
   // CTA
   html += '<div class="verdict-divider"></div>';
-  html += '<div class="verdict-cta">以上仅为命盘要点速览。如需深入，敬请定制【八字 · 紫微双盘详批】——由堂师就您命盘逐项精解，涵盖性情才性、事业格局、财富之道、感情姻缘、六亲缘分、健康体质、学业考运、人际贵人、十年大运、流年吉凶、用神开运、趋避行止，共十二大面向，并就您最关心之事给出明断。</div>';
-  html += '<a class="verdict-cta-link" href="/samples/mingshu/both-zh-TW.html" target="_blank">查看交付案例 →</a>';
-  html += '<div class="verdict-disclaimer">※ 此为基于命盘速读，详尽分析请见下方完整命理分析。</div></div>';
+  html += '<div class="verdict-cta">Trên đây chỉ là điểm nhanh mệnh bàn. Nếu muốn chuyên sâu, hãy đặt 【Bát Tự · Tử Vi song bàn tường giải】 — do đường sư phân tích từng mục theo mệnh bàn của bạn, bao gồm: tính tình tài năng, sự nghiệp cách cục, tài vận, tình duyên hôn nhân, lục thân, sức khỏe, học nghiệp thi cử, nhân tế quý nhân, thập niên đại vận, lưu niên cát hung, dụng thần khai vận, khu xu kỵ chỉ — tổng cộng 12 phương diện, và sẽ phán đoán rõ rệt về việc bạn quan tâm nhất.</div>';
+  html += '<a class="verdict-cta-link" href="/samples/mingshu/both-zh-TW.html" target="_blank">Xem mẫu bàn giao →</a>';
+  html += '<div class="verdict-disclaimer">※ Phân tích trên đây dựa trên mệnh bàn tốc đọc, phân tích chi tiết xin xem bên dưới.</div></div>';
 
   // Wizard card
   html += '<div class="dv-wizard-card">';
-  html += '<div class="dv-card-head" style="display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)"><span class="dv-card-num">2</span><span class="dv-card-title">定制专业命理分析报告</span></div>';
+  html += '<div class="dv-card-head" style="display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)"><span class="dv-card-num">2</span><span class="dv-card-title">Đặt báo cáo mệnh lý chuyên nghiệp</span></div>';
   html += '<div class="dv-wizard-steps">';
-  var steps = [{l:"付定金",s:"（现在）"},{l:"命师分析",s:""},{l:"收试读",s:""},{l:"付尾款",s:""},{l:"交付",s:""}];
+  var steps = [{l:"Đặt cọc",s:" (ngay)"},{l:"Phân tích",s:""},{l:"Nhận thử",s:""},{l:"Thanh toán",s:""},{l:"Bàn giao",s:""}];
   for (var si = 0; si < steps.length; si++) {
     if (si > 0) html += '<span class="dv-wiz-arrow">›</span>';
     html += '<span class="dv-wiz-step' + (si === 0 ? ' on' : '') + '"><span class="sn">' + (si+1) + '</span>' + steps[si].l + steps[si].s + '</span>';
   }
   html += '</div>';
-  html += '<div class="dv-wiz-notice">今日仅付 $19.90 定金即可开始，满意再付尾款解锁完整命书。定金为预约排期之保留款，恕不退还。</div>';
+  html += '<div class="dv-wiz-notice">Hôm nay chỉ trả $19.90 tiền cọc để bắt đầu, hài lòng mới thanh toán phần còn lại để nhận đủ mệnh thư. Tiền cọc là phí giữ chỗ xếp lịch, không hoàn lại.</div>';
   html += '<div class="dv-wiz-warn">';
-  html += '<div class="dv-wiz-warn-title"><span>⚠</span>重要提示 · 定金恕不退还</div>';
-  html += '<div class="dv-wiz-warn-text">近期订单数量显著增加，命盘解读师工作量陡增。为确保真正有需要的客户获得应有的定制品质，定金将不再退还；敬请务必于决策清楚之后再行支付。</div></div>';
-  html += '<div class="dv-wiz-intro">想要几盘合参？双盘交叉印证最完整，也最多人选。</div>';
+  html += '<div class="dv-wiz-warn-title"><span>⚠</span>Lưu ý quan trọng · Cọc không hoàn lại</div>';
+  html += '<div class="dv-wiz-warn-text">Số lượng đơn gần đây tăng đáng kể, công việc của thầy giải mệnh trở nên quá tải. Để đảm bảo khách hàng thực sự có nhu cầu nhận được chất lượng xứng đáng, tiền cọc sẽ không được hoàn lại; mong bạn cân nhắc kỹ trước khi đặt.</div></div>';
+  html += '<div class="dv-wiz-intro">Muốn xem mấy bàn? Song bàn đối chiếu là đầy đủ nhất, cũng được chọn nhiều nhất.</div>';
   html += '<div class="dv-wiz-tiers">';
-  html += '<div class="dv-wiz-tier selected"><div class="dv-wiz-tier-ribbon">★ 最多人选择</div><div class="dv-wiz-tier-name">双盘 · 八字 ＋ 紫微</div><div class="dv-wiz-tier-pr">今日只付 <em>$19.90</em></div><div class="dv-wiz-tier-tt">总价 <em>$199</em></div><div class="dv-wiz-tier-bl">尾款 $179.10 · 满意后付</div></div>';
-  html += '<div class="dv-wiz-tier"><div class="dv-wiz-tier-name">单盘 · 八字 或 紫微</div><div class="dv-wiz-tier-pr">今日只付 <em>$19.90</em></div><div class="dv-wiz-tier-tt">总价 <em>$149</em></div><div class="dv-wiz-tier-bl">尾款 $129.10 · 满意后付</div></div>';
+  html += '<div class="dv-wiz-tier selected"><div class="dv-wiz-tier-ribbon">★ Nhiều người chọn nhất</div><div class="dv-wiz-tier-name">Song bàn · Bát Tự + Tử Vi</div><div class="dv-wiz-tier-pr">Hôm nay chỉ <em>$19.90</em></div><div class="dv-wiz-tier-tt">Tổng <em>$199</em></div><div class="dv-wiz-tier-bl">Còn lại $179.10 · hài lòng mới trả</div></div>';
+  html += '<div class="dv-wiz-tier"><div class="dv-wiz-tier-name">Đơn bàn · Bát Tự hoặc Tử Vi</div><div class="dv-wiz-tier-pr">Hôm nay chỉ <em>$19.90</em></div><div class="dv-wiz-tier-tt">Tổng <em>$149</em></div><div class="dv-wiz-tier-bl">Còn lại $129.10 · hài lòng mới trả</div></div>';
   html += '</div></div>';
 
   vo.innerHTML = html;
@@ -1366,4 +1366,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
