@@ -103,7 +103,7 @@ input,select{font-family:inherit}
     <a href="bat-tu.html" data-i18n="nav.bazi">Bát Tự · Tử Vi</a>
     <a href="hop-hon.html" data-i18n="nav.hehun">Hôn Nhân</a>
     <a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a>
-    <a href="kinh-vi-the.html">Giải Nghĩa</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a>
+    <a href="giai-nghia.html">Giải Nghĩa</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a>
     <a href="them.html" data-i18n="nav.more">Thêm</a>
   </nav>
 </header>
@@ -225,7 +225,7 @@ input,select{font-family:inherit}
     sessionStorage.removeItem('hcd-redirect');
     // Chỉ redirect đến các trang nội bộ hợp lệ
     if (redirect) {
-      var allowedPages = ['bat-tu.html','index.html','hop-hon.html','hoang-lich.html','64-que.html','kinh-vi-the.html','them.html','profile.html'];
+      var allowedPages = ['bat-tu.html','index.html','hop-hon.html','hoang-lich.html','64-que.html','giai-nghia.html','them.html','profile.html'];
       for (var i = 0; i < allowedPages.length; i++) {
         if (redirect.indexOf(allowedPages[i]) >= 0) return allowedPages[i];
       }
