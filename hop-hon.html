@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hợp Hôn — Song Phương Bát Tự Phối Hợp | Huyền Cơ Đường</title>
+<title>Hôn Nhân — Song Phương Bát Tự Phối Hợp | Huyền Cơ Đường</title>
 <meta name="description" content="Hợp hôn bát tự. Phân tích song phương mệnh bàn, tương sinh tương khắc, phối ngẫu cát hung.">
 <meta name="theme-color" content="#9c2a1c"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <header class="kd-header">
   <a class="kd-brand" href="index.html"><div class="kd-seal">易</div><div><div class="name" data-i18n="site.name">Huyền Cơ Đường</div><div class="sub">Dịch Kinh 易 經 · Mệnh Lý</div></div></a>
-  <nav class="kd-nav"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html" data-i18n="nav.bazi">Bát Tự · Tử Vi</a><a href="hop-hon.html" class="active" data-i18n="nav.hehun">Hợp Hôn</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a><a href="them.html" data-i18n="nav.more">Thêm</a></nav>
+  <nav class="kd-nav"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html" data-i18n="nav.bazi">Bát Tự · Tử Vi</a><a href="hop-hon.html" class="active" data-i18n="nav.hehun">Hôn Nhân</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a><a href="them.html" data-i18n="nav.more">Thêm</a></nav>
   <div class="kd-lang" style="display:flex;gap:2px;border:1px solid rgba(33,29,24,.22);border-radius:3px;overflow:hidden">
     <button class="lang-btn active" data-lang="vi" style="padding:5px 10px;font-size:12px;font-family:'Noto Serif';font-weight:600;background:var(--seal);color:var(--surface);border:none;cursor:pointer" onclick="switchLang('vi')">VI</button>
     <button class="lang-btn" data-lang="zh" style="padding:5px 10px;font-size:12px;font-family:'Noto Serif';font-weight:600;background:transparent;color:var(--ink-3);border:none;cursor:pointer" onclick="switchLang('zh')">中文</button>
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </header>
 
 <main class="wrap">
-<h2 class="dual-title">— Hợp Hôn · 合婚 —</h2>
+<h2 class="dual-title">— Hôn Nhân · 合婚 —</h2>
 <p class="dual-sub">Song Phương Bát Tự Phối Hợp · Tương Sinh Tương Khắc · Nhân Duyên Khế Hợp</p>
 
 <!-- ===== FORM GRID 2 CỘT ===== -->
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 
-<button class="btn-run-hehun" id="btnRun">Luận Đoán Hợp Hôn</button>
+<button class="btn-run-hehun" id="btnRun">Luận Đoán Hôn Nhân</button>
 
 <!-- ===== RESULT ===== -->
 <div class="ftn2-result-grid" id="resultGrid">
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <footer class="kd-footer">
   <div class="row">
     <div class="fbrand"><div class="fseal">易</div><div class="ftext">Huyền Cơ Đường · 易經 — Trí tuệ biến dịch phương Đông.</div></div>
-    <div class="flinks"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html" data-i18n="nav.bazi">Bát Tự · Tử Vi</a><a href="hop-hon.html">Hợp Hôn</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a></div>
+    <div class="flinks"><a href="index.html" data-i18n="nav.divination">Gieo Quẻ</a><a href="bat-tu.html" data-i18n="nav.bazi">Bát Tự · Tử Vi</a><a href="hop-hon.html">Hôn Nhân</a><a href="hoang-lich.html" data-i18n="nav.huangli">Hoàng Lịch</a><a href="64-que.html" data-i18n="nav.hexagram">64 Quẻ</a></div>
   </div>
   <div class="fhan">合 婚 · 八 字 · 紫 微 · 配 偶 合 婚</div>
 </footer>
@@ -446,7 +446,7 @@ function renderHeHon(m,f){
   var ss=0;for(var i=0;i<4;i++){var sM=getSS(dmM.stem,m.pillars[i].stem),sF=getSS(dmF.stem,f.pillars[i].stem),sd=Math.abs(sM-sF);if(sd<=2)ss+=2;else if(sd<=5)ss+=1;}ss=Math.min(10,ss);
   var t=Math.round((base+gs+bs+ws+cs+ss)/1.2);if(t>100)t=100;if(t<0)t=0;
   var band,color;if(t>=85){band='Thượng Hôn';color='#4a6741';}else if(t>=70){band='Trung Hôn';color='#8b6914';}else if(t>=50){band='Hạ Hôn';color='#9e3020';}else{band='Bất Lợi';color='#5a0000';}
-  var h='<div class="hehun-free"><div class="hehun-free-head"><div class="hehun-free-num">1</div><div class="hehun-free-title">Tổng Điểm Hợp Hôn</div><div class="hehun-free-tag">Bát Tự</div></div><div class="hehun-score-row"><div class="hehun-score-dial" style="border-color:'+color+'"><div class="hehun-score-num" style="color:'+color+'">'+t+'</div><div class="hehun-score-unit">/ 100</div></div><div class="hehun-score-side"><div class="hehun-score-label">Phân hạng</div><div class="hehun-score-band" style="color:'+color+'">'+band+'</div><p class="hehun-score-verdict">Người trai mệnh <b>'+WX[dmM.stem]+'</b> · Người gái mệnh <b>'+WX[dmF.stem]+'</b></p></div></div>';
+  var h='<div class="hehun-free"><div class="hehun-free-head"><div class="hehun-free-num">1</div><div class="hehun-free-title">Tổng Điểm Hôn Nhân</div><div class="hehun-free-tag">Bát Tự</div></div><div class="hehun-score-row"><div class="hehun-score-dial" style="border-color:'+color+'"><div class="hehun-score-num" style="color:'+color+'">'+t+'</div><div class="hehun-score-unit">/ 100</div></div><div class="hehun-score-side"><div class="hehun-score-label">Phân hạng</div><div class="hehun-score-band" style="color:'+color+'">'+band+'</div><p class="hehun-score-verdict">Người trai mệnh <b>'+WX[dmM.stem]+'</b> · Người gái mệnh <b>'+WX[dmF.stem]+'</b></p></div></div>';
   h+='<div class="hehun-free-sec"><div class="hehun-free-sec-tag">CHI TIẾT ĐIỂM</div><div class="hehun-comp-list">';
   var its=[{l:'Thiên Can',s:gs},{l:'Địa Chi',s:bs},{l:'Ngũ Hành',s:ws},{l:'Tương Sinh',s:cs>0?10:cs<0?0:5},{l:'Thập Thần',s:ss}];
   its.forEach(function(it){var p=it.s/10*100;h+='<div class="hehun-comp-row"><div class="hehun-comp-label">'+it.l+'<span class="hehun-comp-weight">10%</span></div><div class="hehun-comp-bar"><div class="hehun-comp-fill" style="width:'+p+'%;background:'+(p>=60?color:'var(--ink-4)')+'"></div></div><div class="hehun-comp-score" style="color:'+color+'">'+it.s+'</div></div>';});
