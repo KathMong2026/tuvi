@@ -332,13 +332,12 @@ document.getElementById('tryLines').addEventListener('click', function(e) {
   for (var i = 0; i < children.length; i++) {
     if (children[i] === line || children[i].contains(line)) { idx = i; break; }
   }
-  if (idx >= 0) toggleTryLine(5 - idx); // reverse: line 0=top(yao6), line 5=bottom(yao1)
+  if (idx >= 0) toggleTryLine(5 - idx);
 });
 
 // Add try-line classes for click targeting
 (function() {
   var container = document.getElementById('tryLines');
-  // Observe changes and add classes
   var obs = new MutationObserver(function() {
     var children = container.children;
     for (var i = 0; i < children.length; i++) {
@@ -349,7 +348,6 @@ document.getElementById('tryLines').addEventListener('click', function(e) {
     }
   });
   obs.observe(container, { childList: true });
-  // Initial
   setTimeout(function() {
     var children = container.children;
     for (var i = 0; i < children.length; i++) {
