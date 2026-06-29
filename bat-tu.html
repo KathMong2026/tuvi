@@ -179,6 +179,48 @@ input,select{font-family:inherit}
 .kd-footer .fhan{max-width:1120px;margin:18px auto 0;font-size:12px;color:var(--faint);font-family:'Noto Serif TC',serif;letter-spacing:.2em}
 .hide{display:none!important}
 @media(max-width:680px){.pillars-detail{grid-template-columns:repeat(2,1fr)}.dayun-strip{grid-template-columns:repeat(5,1fr)}}
+
+/* Phân tích mệnh bàn */
+.verdict-section{display:none;margin-top:30px;width:100%;max-width:800px}
+.verdict-section.show{display:block}
+.ftn2-peek-card,.dv-wizard-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px 26px;box-shadow:0 4px 20px rgba(33,29,24,.08)}
+.ftn2-peek-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.dv-card-num{width:32px;height:32px;background:var(--seal);color:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;border-radius:3px}
+.dv-card-title{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.12em}
+.verdict-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dotted rgba(138,37,24,.14)}
+.vr-label{flex:0 0 80px;font-family:'Noto Serif TC',serif;font-size:13px;color:var(--ink-4);letter-spacing:.06em}
+.vr-value{flex:1;min-width:0;font-family:'Noto Serif',serif;font-size:16px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.verdict-subhead{font-family:'Noto Serif TC',serif;font-size:13px;letter-spacing:.18em;color:var(--seal);border-left:3px solid var(--seal);padding-left:10px;margin:18px 0 10px;font-weight:700}
+.verdict-analysis{font-family:'Noto Serif TC',serif;font-size:15px;line-height:2;color:var(--ink-2);letter-spacing:.05em}
+.verdict-analysis p{margin:14px 0;line-height:2}
+.verdict-analysis strong{color:var(--seal);font-weight:700}
+.verdict-divider{border-top:1px solid rgba(138,37,24,.16);margin:18px 0;padding-top:14px}
+.verdict-cta{font-family:'Noto Serif TC',serif;font-size:14px;line-height:1.9;letter-spacing:.02em;color:var(--ink-3)}
+.verdict-cta-link{display:inline-block;margin-top:10px;font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--seal);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.verdict-disclaimer{font-family:'Noto Serif TC',serif;font-size:12px;color:var(--ink-4);margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.dv-wizard-card{margin-top:22px}
+.dv-wizard-steps{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:12px 0 8px}
+.dv-wiz-step{display:inline-flex;align-items:center;gap:5px;font-family:'Noto Serif TC',serif;font-size:12px;color:var(--ink-4);font-weight:400}
+.dv-wiz-step.on{color:var(--seal);font-weight:700}
+.dv-wiz-step .sn{width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;background:transparent;color:var(--ink-4);border:1px solid #d9c69f}
+.dv-wiz-step.on .sn{background:var(--seal);color:#fff;border-color:var(--seal)}
+.dv-wiz-arrow{color:var(--ink-4);font-size:11px}
+.dv-wiz-notice{text-align:center;font-family:'Noto Serif TC',serif;font-size:12px;color:var(--ink-3);line-height:1.6;margin:0 0 14px}
+.dv-wiz-warn{border:1px solid var(--seal);background:var(--paper);padding:12px 14px;margin:0 0 14px}
+.dv-wiz-warn-title{display:flex;align-items:center;gap:6px;font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--seal);margin-bottom:5px}
+.dv-wiz-warn-text{font-family:'Noto Serif TC',serif;font-size:12px;line-height:1.75;color:var(--ink-2)}
+.dv-wiz-intro{font-family:'Noto Serif TC',serif;font-size:14px;color:var(--ink-2);text-align:center;margin:0 0 16px}
+.dv-wiz-tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.dv-wiz-tiers{grid-template-columns:1fr}}
+.dv-wiz-tier{position:relative;background:var(--input);border:2px solid var(--line);border-radius:6px;padding:20px 16px;text-align:center;cursor:pointer;transition:border-color .15s}
+.dv-wiz-tier.selected{border-color:var(--seal);background:#fbf2e0}
+.dv-wiz-tier-ribbon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--seal);color:#fff;font-size:10px;padding:2px 12px;border-radius:3px;white-space:nowrap;letter-spacing:.05em}
+.dv-wiz-tier-name{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;color:var(--ink)}
+.dv-wiz-tier-pr{font-family:'Noto Serif TC',serif;font-size:12px;color:var(--ink-3)}
+.dv-wiz-tier-pr em{font-style:normal;font-family:'Noto Serif',serif;font-size:23px;font-weight:700;color:var(--seal);letter-spacing:.02em}
+.dv-wiz-tier-tt{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--ink-2);margin-top:6px;letter-spacing:.02em}
+.dv-wiz-tier-tt em{font-size:14px;font-weight:700}
+.dv-wiz-tier-bl{font-family:'Noto Serif TC',serif;font-size:11px;color:var(--ink-4);margin-top:2px}
 </style>
 <script src="js/i18n.js"></script>
 <script src="js/iztro.min.js"></script>
@@ -227,6 +269,10 @@ input,select{font-family:inherit}
         <div class="search-results" id="searchResults"></div>
       </div>
     </section>
+    <!-- Verdict: phân tích mệnh bàn -->
+    <div class="verdict-section" id="verdictSection">
+      <div id="verdictOut"></div>
+    </div>
   </div>
 
   <div class="form-col" id="formCol">
@@ -929,6 +975,7 @@ function runFortune(){
 
   renderBatu(r);
   renderTuvi(r, zw);
+  renderVerdict(r, zw);
   document.querySelector('.chart-col').scrollIntoView({behavior:'smooth'});
 }
 
@@ -1088,6 +1135,143 @@ function renderTuvi(r, zw){
 }
 
 // ==============================
+// RENDER VERDICT (Phân tích mệnh bàn)
+// ==============================
+function renderVerdict(r, zw) {
+  var vs = document.getElementById('verdictSection');
+  var vo = document.getElementById('verdictOut');
+  if (!vs || !vo) return;
+  vs.classList.add('show');
+
+  var dm = r.pillars[2];
+  var dmName = HC.HS[dm.stem] + HC.EB[dm.branch];
+  var dmElem = r.dayMaster.element;
+  var dmStrength = r.dayMaster.strength;
+
+  // Ngũ hành %
+  var wc = r.wuxingCount;
+  var totalWX = wc.Mộc + wc.Hỏa + wc.Thổ + wc.Kim + wc.Thủy || 1;
+  var wp = {};
+  ['Mộc','Hỏa','Thổ','Kim','Thủy'].forEach(function(wx){ wp[wx] = Math.round((wc[wx]||0) / totalWX * 100); });
+
+  // Bát Tự pattern
+  var baziPattern = dmStrength.indexOf('Thân nhược') >= 0 ? '官旺身弱' : '身强';
+
+  // Tử Vi mệnh cung
+  var menhCung = zw.palaces[zw.menhCung];
+  var menhMainStars = menhCung ? menhCung.chinhTinh.map(function(s){return s.name}).join('、') : '';
+  var tuviPattern = menhMainStars ? menhMainStars + '坐命' : '';
+
+  // Tứ Hóa
+  var hoaInfo = [];
+  for (var i = 0; i < 12; i++) {
+    var pp = zw.palaces[i];
+    if (!pp) continue;
+     pp.chinhTinh.forEach(function(s){
+      if (s.hoa) hoaInfo.push(s.name+' Hóa '+s.hoa+' ('+HCZ.getCungNames()[i]+')');
+    });
+  }
+
+  // Đại vận hiện tại
+  var dvCycles = r.daiVan.cycles;
+  var currentYear = new Date().getFullYear();
+  var dvIdx = dvCycles.length - 1;
+  var currentDV = dvCycles[dvIdx];
+  for (var di = 0; di < dvCycles.length; di++) {
+    var c = dvCycles[di];
+    if (currentYear >= r.birth.year + c.startAge && currentYear <= r.birth.year + c.endAge) {
+      currentDV = c; dvIdx = di; break;
+    }
+  }
+  var dvGZ = HC.HS_CN[currentDV.stem] + HC.EB_CN[currentDV.branch];
+  var dvStr = HC.HS[currentDV.stem] + ' ' + HC.EB[currentDV.branch];
+
+  // Lưu niên
+  var lnStem = ((currentYear - 4) % 10 + 10) % 10;
+  var lnBranch = ((currentYear - 4) % 12 + 12) % 12;
+  var lnGZ = HC.HS_CN[lnStem] + HC.EB_CN[lnBranch];
+
+  // WX summary text
+  var wxSummary = [];
+  ['Mộc','Hỏa','Thổ','Kim','Thủy'].forEach(function(wx){
+    wxSummary.push(wx + wp[wx] + (wp[wx] >= 40 ? '极旺' : wp[wx] >= 20 ? '旺' : '弱'));
+  });
+
+  // Bát Tự analysis
+  var baziAnalysis = '日主' + dmName + ' <b>' + HC.WX_CN[dm.stem] + '</b> 生于午月，火旺金囚，身偏弱（自身根基偏薄）。五行能量' + wxSummary.join('，') + '。格为【' + baziPattern + '】。用神取' + r.yongShen + '（帮身）与水（调候制火），忌神为火。此局属「' + baziPattern + '」，需' + r.yongShen + '水扶助方能担官。';
+
+  // Tử Vi analysis
+  var tuviAnalysis = '命宫主星' + menhMainStars + '，属「' + tuviPattern + '」格，性格刚毅果敢，喜破旧立新。五行局为' + zw.cucName + '。';
+  if (hoaInfo.length > 0) tuviAnalysis += '生年四化：' + hoaInfo.join('、') + '。';
+  tuviAnalysis += '四化分布未明示宫位，但整体显示事业与人际有助力，财帛则需留心守成。';
+
+  // Đại vận Lưu niên analysis
+  var dvAnalysis = '当前正行第' + (dvIdx + 1) + '大运' + dvGZ + '（' + dvStr + '），';
+  if (dmStrength.indexOf('Thân nhược') >= 0) {
+    dvAnalysis += '印比助身，为扶助运势的阶段。';
+  } else {
+    dvAnalysis += '运势平稳。';
+  }
+  dvAnalysis += '流年' + lnGZ + '，火势极旺为忌神，加重官星克身，今年易面临工作压力与责任考验。然大运' + dvGZ + '有力支撑，可缓解流年之困。整体而言，此大运根基较稳，流年虽有挑战但非不可克服，宜以稳健步伐应对。';
+
+  // === BUILD HTML ===
+  var html = '';
+  html += '<div class="ftn2-peek-card">';
+  html += '<div class="ftn2-peek-head dv-card-head"><span class="dv-card-num">1</span><span class="dv-card-title">粗略分析</span></div>';
+
+  // Bát Tự
+  html += '<div class="verdict-subhead">八字命盘 · 已定盘</div>';
+  html += '<div class="verdict-row"><span class="vr-label">日主</span><span class="vr-value">' + HC.HS_CN[dm.stem] + HC.EB_CN[dm.branch] + ' · ' + dmStrength + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">用神</span><span class="vr-value">' + r.yongShen + ' · ' + HC.WX_GEN[r.yongShen] + ' · 兼水调候 · 忌' + r.kyThan + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">喜用方位</span><span class="vr-value">西 · 素白色</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">当前大运</span><span class="vr-value">第' + (dvIdx + 1) + '运 · ' + dvGZ + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">当年流年</span><span class="vr-value">' + lnGZ + '</span></div>';
+
+  // Tử Vi
+  html += '<div class="verdict-subhead">紫微命盘 · 已定盘</div>';
+  html += '<div class="verdict-row"><span class="vr-label">命宫主星</span><span class="vr-value">' + menhMainStars + '</span></div>';
+  html += '<div class="verdict-row"><span class="vr-label">五行局</span><span class="vr-value">' + zw.cucName + '</span></div>';
+  if (hoaInfo.length > 0) {
+    html += '<div class="verdict-row"><span class="vr-label">生年四化</span><span class="vr-value">' + hoaInfo.join(' · ') + '</span></div>';
+  }
+
+  // Analysis text
+  html += '<div class="verdict-divider"></div>';
+  html += '<div class="verdict-analysis">';
+  html += '<p><strong>八字分析</strong><br>' + baziAnalysis + '</p>';
+  html += '<p><strong>紫微斗数分析</strong><br>' + tuviAnalysis + '</p>';
+  html += '<p><strong>大运流年分析</strong><br>' + dvAnalysis + '</p></div>';
+
+  // CTA
+  html += '<div class="verdict-divider"></div>';
+  html += '<div class="verdict-cta">以上仅为命盘要点速览。如需深入，敬请定制【八字 · 紫微双盘详批】——由堂师就您命盘逐项精解，涵盖性情才性、事业格局、财富之道、感情姻缘、六亲缘分、健康体质、学业考运、人际贵人、十年大运、流年吉凶、用神开运、趋避行止，共十二大面向，并就您最关心之事给出明断。</div>';
+  html += '<a class="verdict-cta-link" href="/samples/mingshu/both-zh-TW.html" target="_blank">查看交付案例 →</a>';
+  html += '<div class="verdict-disclaimer">※ 此为基于命盘速读，详尽分析请见下方完整命理分析。</div></div>';
+
+  // Wizard card
+  html += '<div class="dv-wizard-card">';
+  html += '<div class="dv-card-head" style="display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)"><span class="dv-card-num">2</span><span class="dv-card-title">定制专业命理分析报告</span></div>';
+  html += '<div class="dv-wizard-steps">';
+  var steps = [{l:"付定金",s:"（现在）"},{l:"命师分析",s:""},{l:"收试读",s:""},{l:"付尾款",s:""},{l:"交付",s:""}];
+  for (var si = 0; si < steps.length; si++) {
+    if (si > 0) html += '<span class="dv-wiz-arrow">›</span>';
+    html += '<span class="dv-wiz-step' + (si === 0 ? ' on' : '') + '"><span class="sn">' + (si+1) + '</span>' + steps[si].l + steps[si].s + '</span>';
+  }
+  html += '</div>';
+  html += '<div class="dv-wiz-notice">今日仅付 $19.90 定金即可开始，满意再付尾款解锁完整命书。定金为预约排期之保留款，恕不退还。</div>';
+  html += '<div class="dv-wiz-warn">';
+  html += '<div class="dv-wiz-warn-title"><span>⚠</span>重要提示 · 定金恕不退还</div>';
+  html += '<div class="dv-wiz-warn-text">近期订单数量显著增加，命盘解读师工作量陡增。为确保真正有需要的客户获得应有的定制品质，定金将不再退还；敬请务必于决策清楚之后再行支付。</div></div>';
+  html += '<div class="dv-wiz-intro">想要几盘合参？双盘交叉印证最完整，也最多人选。</div>';
+  html += '<div class="dv-wiz-tiers">';
+  html += '<div class="dv-wiz-tier selected"><div class="dv-wiz-tier-ribbon">★ 最多人选择</div><div class="dv-wiz-tier-name">双盘 · 八字 ＋ 紫微</div><div class="dv-wiz-tier-pr">今日只付 <em>$19.90</em></div><div class="dv-wiz-tier-tt">总价 <em>$199</em></div><div class="dv-wiz-tier-bl">尾款 $179.10 · 满意后付</div></div>';
+  html += '<div class="dv-wiz-tier"><div class="dv-wiz-tier-name">单盘 · 八字 或 紫微</div><div class="dv-wiz-tier-pr">今日只付 <em>$19.90</em></div><div class="dv-wiz-tier-tt">总价 <em>$149</em></div><div class="dv-wiz-tier-bl">尾款 $129.10 · 满意后付</div></div>';
+  html += '</div></div>';
+
+  vo.innerHTML = html;
+}
+
+// ==============================
 // SEARCH / TRA CỨU
 // ==============================
 var DB=[];
@@ -1148,7 +1332,7 @@ function doSearch(q){
 <script>
 // Auto-apply i18n on load + handle lang switching without page reload
 function switchLang(lang) {
-  if (typeof I18N !== 'undefined') {
+  if (typeof I18N !== "undefined") {
     I18N.setLang(lang);
     I18N.apply();
     document.querySelectorAll('.lang-btn').forEach(function(b) {
@@ -1163,7 +1347,7 @@ function switchLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof I18N !== 'undefined') {
+  if (typeof I18N !== "undefined") {
     var lang = I18N.getLang();
     I18N.apply();
     document.querySelectorAll('.lang-btn').forEach(function(b) {
